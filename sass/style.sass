@@ -1,0 +1,61 @@
+/* COLORS */
+$background: #f9f9f9
+$text: #333
+
+/* FONT SETTINGS */
+$fs: 16px
+$lh: 24px
+
+@import 'includes'
+@import 'zen'
+
+
+/* SETTING UP ZEN GRIDS */
+// gem install zen-grids
+// read more http://zengrids.com/
+
+// Set the total number of columns in the grid
+$zen-column-count: 7
+
+//A half-gutter is used on each side of each column
+$zen-gutter-width: 10px
+
+
+
+
+@mixin sans
+	font-family: sans-serif
+
+*
+	+border-box // This'll change the box model so everything is contained within it: http://paulirish.com/2012/box-sizing-border-box-ftw/
+	-webkit-tap-highlight-color: transparent // remove webkit tap highlights. Aint nobody got time for that
+
+// SORT OUT VIEWPORT META ON IE10 http://m.netmagazine.com/features/five-steps-gettin-flexy-responsive-web-design
+@viewport
+	width: device-width
+@-ms-viewport
+	width: device-width
+@-o-viewport
+	width: device-width
+
+body
+	background-color: $background
+	color: $text 
+
+#container
+	
+	width: 100%
+	max-width: 1024px
+	margin: 0 auto
+	+sans
+	font-size: $fs
+	line-height: $lh
+	padding: $lh $fs
+
+	h1
+		font-size: em(24px)
+		line-height: $lh*2
+		margin-bottom: $lh
+
+	p 
+		margin-bottom: $lh
